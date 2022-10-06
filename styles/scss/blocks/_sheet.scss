@@ -1,0 +1,25 @@
+.sheet {
+
+    position: relative;
+    margin: 0 auto;
+
+    width: var(--theme-sheet-width-xs); /*340*/
+
+    @media (min-width: 576px) {
+        width: var(--theme-sheet-width-sm); /*540*/
+    }
+
+    @media (min-width: 768px) {
+        width: var(--theme-sheet-width-md); /*720*/
+    }
+
+    @media (min-width: 992px) {
+        width: var(--theme-sheet-width-lg); /*940*/
+    }
+
+    @media (min-width: 1200px) {
+        width: var(--theme-sheet-width-xl); /*1140*/
+    }
+
+
+}

@@ -1,0 +1,47 @@
+
+.header {
+
+    &__sheet {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        @media(min-width: 768px) {
+            justify-content: space-between;
+            gap: 0;
+        }
+    }
+
+    &__inner-wrapper {
+        padding-top: 30px;
+    }
+
+    &__logo {
+    }
+
+    &__socials {
+
+    }
+    &__socials--1 {
+        @media(min-width: 768px) {
+            order: 1;
+        }
+    }
+
+    &__nav {
+        flex-basis: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        @media(min-width: 768px) {
+            flex-basis: 80%;
+            order: 0;
+            font-size: 1rem;
+        }
+    }
+
+}
+
