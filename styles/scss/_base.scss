@@ -31,13 +31,18 @@ section > *, header > *, footer > *, .sheet > * {
 
 
 body {
-    font-family: "PT Sans", sans-serif;
+    font-family: "Open Sans", sans-serif;
+
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
 
 p {
     margin: 0;
     padding: 0;
+  /*  margin-top: 20px;
+    margin-bottom: 20px;*/
 }
 
 a {

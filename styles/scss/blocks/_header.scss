@@ -14,7 +14,7 @@
     }
 
     &__inner-wrapper {
-        padding-top: 30px;
+        padding-top: 50px;
     }
 
     &__logo {
@@ -32,14 +32,20 @@
     &__nav {
         flex-basis: 100%;
         display: flex;
-        justify-content: center;
-        gap: 30px;
+        justify-content:  space-between;
         text-transform: uppercase;
-        font-size: 0.8rem;
+        font-size: 0.7rem;
+        @media(min-width: 576px) {
+            font-size: 0.8rem;
+            justify-content: center;
+            gap: 30px;
+
+        }
+
         @media(min-width: 768px) {
             flex-basis: 80%;
             order: 0;
-            font-size: 1rem;
+            font-size: 0.9rem;
         }
     }
 

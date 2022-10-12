@@ -1,6 +1,8 @@
 .nav {
 
     &__link {
-      /*  border-bottom: 1px solid var(--main-font-color);*/
+      white-space: nowrap;
+    /*  border-bottom: 1px solid var(--main-font-color);
+      padding-bottom: 2px;*/
     }
 }

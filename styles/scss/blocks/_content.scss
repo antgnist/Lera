@@ -44,6 +44,25 @@
         margin-right: 78px;
     }
 
+    &__shape--3 {
+        height: 451px;
+        width: 100%;
+      //  margin-left: auto;
+
+        @media(min-width: 576px) {
+            height: 592px;
+        }
+        @media(min-width: 768px) {
+            height: 823px;
+        }
+        @media(min-width: 992px) {
+            height: 858px;
+        }
+        @media (min-width: 1200px) {
+            height: 947px
+        }
+    }
+
     &__image-circle {
         border-radius: 50%;
 
@@ -61,6 +80,31 @@
         margin-left: auto;
         margin-top: -355px;
         margin-right: 20px;
+        @media(min-width: 576px) {
+            width: 377px;
+            height: 377px;
+            margin-top: -464px;
+            margin-right: 38px;
+        }
+        @media(min-width: 768px) {
+            width: 509px;
+            height: 509px;
+            margin-top: -753px;
+            margin-right: 30px;
+        }
+        @media(min-width: 992px) {
+            width: 660px;
+            height: 660px;
+            margin-top: -842px;
+            margin-right: 69px;
+        }
+        @media (min-width: 1200px) {
+            width: 690px;
+            height: 691px;
+            margin-top: -862px;
+            margin-right: 115px;
+        }
+
     }
 
     &__container {
@@ -69,10 +113,35 @@
         background-color: var(--neutral-bg-color);
         border-radius: 30px;     
     }
+
     &__container--1 {
         width: auto;
         min-height: 363px;
+        margin-top: 36px;
+        @media(min-width: 576px) {
+            width: 426px;
+            min-height: 427px;
+            margin-top: 12px;
+        }
+        @media(min-width: 768px) {
+            width: 415px;
+            min-height: 415px;
+            margin-top: -408px;
+        }
+        @media(min-width: 992px) {
+            width: 490px;
+            min-height: 417px;
+            margin-top: -459px;
+            margin-bottom: 60px;
 
+        }
+        @media (min-width: 1200px) {
+            width: 541px;
+            min-height: 441px;
+            margin-top: -481px;
+         /*   margin-bottom: 100px;*/
+
+        }
     }
 
     &__container-layout {
@@ -86,12 +155,104 @@
         padding-right: 20px;
 
         border-radius: 30px;
+
+        @media(min-width: 768px) {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
     }
+
+
+    &__palettes {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+        min-height: 321px;
+        @media(min-width: 768px) {
+            flex-direction: row;
+        }
+        @media (min-width: 1200px) {
+            gap: 24px;
+        }
+    }
+
+    &__palette {
+        background-color: var(--theme-color-2);
+        color:var(--neutral-bg-color);
+        flex-basis: 48.6%;
+        @media(min-width: 992px) {
+            flex-basis: 31.9%;
+        }
+    }
+
+    &__palette:nth-child(2) {
+        background-color: var(--theme-color-1);
+    }   
     
+    &__palette--2 {
+        background-color: var(--neutral-bg-color);
+        color:var(--main-font-color);
+    }
+    &__palette--2:nth-child(2) {
+        background-color: var(--neutral-bg-color);
+    }   
+
+    &__row--1 {
+        margin-top: 42px;
+    }
 
 
+    &__tile--1 {
+
+        margin-left:auto;
+        margin-right: auto;
+
+        width: 268px;
+        margin-top: -386px;
+
+        @media(min-width: 576px) {
+            width: 428px;
+            margin-top: -518px;
+            margin-bottom: 58px;
+           // margin-left: 44px;
+        }
+        @media(min-width: 768px) {
+            width: 629px;
+       //     margin-left:auto;
+            margin-top: -757px;
+            margin-bottom: 126px;
+        }
+        @media(min-width: 992px) {
+            width: 792px;
+            margin-top: -777px;
+            margin-bottom: 141px;
+        }
+        @media (min-width: 1200px) {
+            width: 915px;
+            margin-top: -812px;
+            margin-bottom: 196px;
+        }
+
+    }
 
 
+    &--2{
+
+    }
+
+    /*---------------------------*/
+
+    &--3 .button {
+        margin-top: 32px;
+    }
+
+   /*---------------------------*/
+
+    &--4 {
+
+    }
 
 
 }

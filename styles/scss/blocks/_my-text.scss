@@ -1,13 +1,215 @@
 .my-text {
-    &--1 {
+    word-wrap: break-word;
 
+    &--custom {
+        font-family: Montserrat, sans-serif;
+    }
+    &--custom-2 {
+        font-family: Oswald, sans-serif;
+    }
+
+    &--line {
+        width: 100px;
+        border-top: 4px solid var(--main-font-color);
+        margin:auto;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+
+}
+
+.content--1 .my-text {
+    &--1 {
+        font-family: "PT Sans", sans-serif;
+        letter-spacing: 4px;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 1.125rem;
+        margin: 0 auto 0 0;
+        @media(min-width: 576px) {
+            font-size: 1.25rem;
+        }
     }
     &--2 {
-        
+        font-size: 3rem;
+        line-height: 1.1;
+        font-weight: 700;
+        font-family: "PT Sans", sans-serif;
+        margin: 21px 0 0;   
+        @media(min-width: 576px) {
+            font-size: 3.75rem;
+        }
+        @media(min-width: 992px) {
+            font-size: 4.5rem;
+        }
+
     }
     &--3 {
+        margin: 21px 0px 0 0;
+        letter-spacing: 1px;
         
     }
+}
 
+
+.content--2 .my-text {
+    &--1 {
+        font-weight: 700;
+        font-size: 1.5rem;
+        margin: 30px 0px 0;
+        line-height: 1.2;
+
+        @media(min-width: 576px) {
+        }
+    }
+    &--2 {
+        font-weight: 700;
+        font-size: 2.25rem;
+        margin: 0;
+        line-height: 1.1;
+  
+        @media(min-width: 576px) {
+        }
+        @media(min-width: 992px) {
+        }
+
+    }
+    &--3 {
+        font-family: sans-serif;    
+    }
+}
+
+.content--3 .my-text {
+    &--1 {
+   //     font-weight: 700;
+        font-size: 1.5rem;
+        margin: 0;
+     //   line-height: 1.2;
+
+        @media(min-width: 576px) {
+            font-size: 1.875rem;
+        }
+        @media(min-width: 768px) {
+            font-size: 1.5rem;
+        }
+        @media(min-width: 992px) {
+            font-size: 1.875rem;
+        }
+    }
+    &--2 {
+        margin: 20px 0 0;
+
+        @media(min-width: 576px) {
+        }
+        @media(min-width: 768px) {
+        }
+        @media(min-width: 992px) {
+        }
+    }
+
+    &--3 {
+        margin-top: 20px;
+        margin-bottom: 0;
+        letter-spacing: 1px;
+        line-height: 1.2;
+    }
+    
+
+}
+
+
+.content--4 .my-text {
+    
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        width: 100%;
+        
+        @media(min-width: 576px) {
+            flex-direction: row;
+            align-items: center;
+            gap: 16px;
+        }
+    }
+    // &__wrapper:first-child{
+    //     flex-basis: 20%;
+    // }
+    // &__wrapper:nth-child(2){
+    //     flex-basis: 80%;
+    // }
+
+    &--1 {
+        font-weight: 700;
+        text-align: center;
+        font-size: 2.75rem;
+        line-height: 1.1;
+        margin: 0;
+
+        @media(min-width: 576px) {
+            font-size: 3rem;
+        }
+        @media(min-width: 768px) {
+            font-size: 3.75rem;    
+        }
+        @media(min-width: 992px) {        
+        }
+    }
+    &--2 {
+        font-weight: 700;
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 2px;
+        font-size: 1.25rem;
+        margin-top: 20px;
+
+        @media(min-width: 576px) {
+        }
+        @media(min-width: 768px) {
+        }
+        @media(min-width: 992px) {
+        }
+    }
+
+    &--3 {
+        font-size: 3.75rem;
+        line-height: 4rem;
+        margin: 0;
+        @media(min-width: 576px) {
+            font-size: 4.0625rem;
+        }
+        @media (min-width: 1200px) {
+            font-size: 4.5rem;
+        }
+    }
+    &--4 {
+        font-size: 1.875rem;
+        margin: 0;
+        font-weight: 300;
+
+        width: 100%;
+        line-height: 2rem;
+        @media(min-width: 768px) {
+            font-size: 1.5rem;
+        }
+        
+
+    }
+    &--5 {
+        font-size: 1.125rem;
+        font-style: italic;
+        text-align: left;
+        @media(min-width: 576px) {
+            padding-left: 55px;
+        }
+
+        @media(min-width: 768px) {
+            margin-top: -9px;
+            padding-left: 60px;
+        }
+
+    }
+    
 
 }
