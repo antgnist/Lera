@@ -9,8 +9,13 @@
     <link id="theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     <link id="page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i|Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|PT+Sans:400,400i,700,700i|Oswald:200,300,400,500,600,700">
     <link rel="stylesheet" href="styles/css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="styles/css/normalize.css">
-    <script src="scripts/index.js" defer></script>
+
+    <script  src="scripts/schedule.js" defer></script>
+    <script  type="module" src="scripts/index.js" defer></script>
+  
+
          
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
@@ -22,6 +27,78 @@
 </head>
 <body>
 
+  <div class="sidebar__wrapper">
+    <div class="sidebar__overlay"></div>
+    <div class="sidebar">
+      <div class="sidebar__close">
+        <button class="icon-wrapper">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.79348 1.25712C2.40295 0.866593 1.76979 0.866592 1.37927 1.25712L1.25712 1.37927C0.866592 1.76979 0.866593 2.40296 1.25712 2.79348L7.46364 9L1.25712 15.2065C0.866593 15.597 0.866592 16.2302 1.25712 16.6207L1.37927 16.7429C1.76979 17.1334 2.40295 17.1334 2.79348 16.7429L9 10.5364L15.2065 16.7429C15.597 17.1334 16.2302 17.1334 16.6207 16.7429L16.7429 16.6207C17.1334 16.2302 17.1334 15.597 16.7429 15.2065L10.5364 9L16.7429 2.79348C17.1334 2.40296 17.1334 1.76979 16.7429 1.37927L16.6207 1.25712C16.2302 0.866592 15.597 0.866593 15.2065 1.25712L9 7.46364L2.79348 1.25712Z" fill="var(--nothing-bg-color)"></path>
+          </svg>              
+        </button>
+      </div>
+      <div class="sidebar__content">
+
+        <!---->
+
+      
+      
+    </div>
+    </div>
+
+    <template id="template-callback">
+      <div class="callback-sidebar">
+        <div class="sidebar__header">
+          Заказать звонок
+        </div>
+        <div class="sidebar__body">
+          <form class="sidebar__form callback-form" action="mail.php" method="POST">
+            <input class="callback-form__input sidebar__input" type="text" id="phone" name="phone" placeholder="Телефон" value="" required="">     
+            <div class="privacy-text sidebar__confirm-info">
+              <span>Нажимая отправить, вы даете согласие на <a href="#" rel="noopener noreferrer" target="_blank">обработку персональных данных</a> и соглашаетесь с нашей 
+                <a href="#" rel="noopener noreferrer" target="_blank">политикой конфиденциальности</a>
+              </span>
+            </div>
+            <button class="callback-form__submit sidebar__submit button-text-dropdown" type="submit">
+              <span>Отправить</span>
+              <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M4.5 6L0.707106 2.20711C0.316582 1.81658 0.316582 1.18342 0.707107 0.792893L0.792893 0.707107C1.18342 0.316583 1.81658 0.316583 2.20711 0.707107L6.79289 5.29289C7.18342 5.68342 7.18342 6.31658 6.79289 6.70711L2.20711 11.2929C1.81658 11.6834 1.18342 11.6834 0.792893 11.2929L0.707107 11.2071C0.316583 10.8166 0.316583 10.1834 0.707107 9.79289L4.5 6Z" fill="var(--nothing-bg-color)"></path>
+              </svg>                    
+            </button>
+          </form>
+        </div>
+      </div>
+    </template>
+
+    <template id="template-feedback">
+      <div class="feedback-sidebar">
+        <div class="sidebar__header">
+          Обратная связь
+        </div>
+        <div class="sidebar__body">
+          <form class="sidebar__form feedback-form" action="" method="">
+            <input class="feedback-form__input sidebar__input" type="text" id="name" name="name" placeholder="Имя" value="">   
+            <input class="feedback-form__input sidebar__input" type="text" id="phone" name="phone" placeholder="Телефон" value="" required="">     
+            <input class="feedback-form__input sidebar__input" type="text" id="email" name="email" placeholder="Электронная почта" value="">    
+            <textarea class="feedback-form__textarea sidebar__textarea" name="message" id="message" cols="30" rows="8"></textarea> 
+            <div class="privacy-text sidebar__confirm-info">
+              <span>Нажимая отправить, вы даете согласие на <a href="#" rel="noopener noreferrer" target="_blank">обработку персональных данных</a> и соглашаетесь с нашей 
+                <a href="#" rel="noopener noreferrer" target="_blank">политикой конфиденциальности</a>
+              </span>
+            </div>
+            <button class="feedback-form__submit sidebar__submit button-text-dropdown" type="submit">
+              <span>Отправить</span>
+              <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M4.5 6L0.707106 2.20711C0.316582 1.81658 0.316582 1.18342 0.707107 0.792893L0.792893 0.707107C1.18342 0.316583 1.81658 0.316583 2.20711 0.707107L6.79289 5.29289C7.18342 5.68342 7.18342 6.31658 6.79289 6.70711L2.20711 11.2929C1.81658 11.6834 1.18342 11.6834 0.792893 11.2929L0.707107 11.2071C0.316583 10.8166 0.316583 10.1834 0.707107 9.79289L4.5 6Z" fill="var(--nothing-bg-color)"></path>
+              </svg>                    
+            </button>
+          </form>
+        </div>
+      </div>
+    </template>
+
+
+  </div>
 
   <header class="header">
     <div class="sheet header__sheet header__inner-wrapper">
@@ -43,11 +120,11 @@
     </div>
     
 
-    <nav class="header__nav nav my-text--custom">
+    <nav class="header__nav nav my-text--custom animate-opacity">
         <a href="#" class="nav__link">Мастер-классы</a>
         <a href="#" class="nav__link">Расписание</a>
-        <a href="#" class="nav__link">Цены</a>
-        <a href="#" class="nav__link">Контакты</a>
+        <a href="#" class="nav__link callback-enter modal-enter" data-modal="template-callback">Цены</a>
+        <a href="#" class="nav__link feedback-enter modal-enter" data-modal="template-feedback">Контакты</a>
     </nav>
 
     </div>
@@ -56,7 +133,7 @@
   <section class="content content--1">
     <div class="sheet content__sheet content__inner-wrapper">
 
-      <div class="content__shape content__shape--1">
+      <div class="content__shape content__shape--1 animate-appearance">
         <svg class="svg__link" preserveAspectRatio="none" viewBox="0 0 160 150" style=""><use xlink:href="#shape--1"></use></svg>
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="svg__content" fill="currentColor" viewBox="0 0 160 150" x="0px" y="0px" id="shape--1"><path d="M43.2,126.9c14.2,1.3,27.6,7,39.1,15.6c8.3,6.1,19.4,10.3,32.7,5.3c11.7-4.4,18.6-17.4,21-30.2c2.6-13.3,8.1-25.9,15.7-37.1
             c8.3-12.1,10.8-27.9,5.3-42.7C150.5,20.3,134.6,9,117,7.6C107.9,6.9,98.8,5,90.1,1.9C83-0.6,75-0.7,67.4,2.1
@@ -65,13 +142,20 @@
         </svg>
       </div>
 
-      <div class="content__image-circle content__image-circle--1 ">
+      <div class="content__image-circle content__image-circle--1 animate-rotate">
+        <div class="swiper1">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <div class="content__slide content__slide--1 content__slide--1a swiper-slide">Слайд 1</div>
+            <div class="content__slide content__slide--1 content__slide--1b swiper-slide">Слайд 2</div>
+          </div>
+        </div>
       </div>
 
-      <div class="content__shape content__shape--2">
+      <div class="content__shape content__shape--2 animate-fromright">
       </div>
 
-      <div class="content__container content__container--1 ">
+      <div class="content__container content__container--1 animate-fromleft">
         <div class="content__container-layout">
             <h5 class="my-text--1">неваляшка назойливая<br>
             </h5>
@@ -114,7 +198,7 @@
             <span class="palette__icon icon">
               <img src="images/content/684831-948597b6.png" alt="">
             </span>
-            <h5 class="palette__subtitle my-text--1 my-text--custom">​Под ваш вкус</h5>
+            <h5 class="palette__subtitle my-text--1 my-text--custom">​Подарочные сертификаты</h5>
             <p class="palette__text">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
           </div>
         </div>
@@ -142,13 +226,6 @@
 
       <div class="content__shape content__shape--3">
         <svg class="svg__link" preserveAspectRatio="none" viewBox="0 0 160 150" style=""><use xlink:href="#shape--1"></use></svg>
-
-        <!--     <svg class="svg__link" preserveAspectRatio="none" viewBox="0 0 160 150" style=""><use xlink:href="#shape--3"></use></svg>
-        <svg class="svg__content" viewBox="0 0 160 150" fill="currentColor" x="0px" y="0px" id="shape--3"><path d="M43.2,126.9c14.2,1.3,27.6,7,39.1,15.6c8.3,6.1,19.4,10.3,32.7,5.3c11.7-4.4,18.6-17.4,21-30.2c2.6-13.3,8.1-25.9,15.7-37.1
-          c8.3-12.1,10.8-27.9,5.3-42.7C150.5,20.3,134.6,9,117,7.6C107.9,6.9,98.8,5,90.1,1.9C83-0.6,75-0.7,67.4,2.1
-          c-9.9,3.7-17,11.6-20.1,21c-3.3,10.1-10.9,18-20.6,22.2c-0.1,0-0.1,0.1-0.2,0.1c-20.3,8.9-31,32-24.6,53.2
-          C6.9,115.6,25.2,125.2,43.2,126.9z"></path></svg>
-          -->  
       </div>
 
       <div class="content__tile content__tile--1  tile">
@@ -185,6 +262,67 @@
         </div>
       </div>
 
+    </div>
+  </section>
+
+
+
+  <section class="content content--8">
+    <div class="sheet content__sheet content__inner-wrapper">
+
+  
+      <h2 class="my-text--1">How to Learn Tech Skills</h2>
+      <h5 class="my-text--2">5 Things to Practice at Home</h5>
+
+      <div class="schedule__wrapper">
+        <div class="schedule">     
+          <div class="schedule__header ">
+            <div class="schedule__header-row"></div>
+          </div>
+          <div class="schedule__body"></div>
+        </div>
+
+        <div class="schedule__under">
+          <div class="shedule__control">
+            <button class="shedule__left">Левая</button>
+            <button class="shedule__right">Правая</button>
+          </div>
+          <p class="my-text--3">
+            Какой-то текст, который нормально там объясняет по поводу того, как записаться. На какое время возможно, что мы подстроимся под вас итд. Мол вы пишите и будете красавчиками, там всё порешаем.
+          </p>
+        </div>  
+      </div>
+  </div>
+  </section>
+
+
+
+  <section class="content content--5">
+    <div class="sheet content__sheet content__inner-wrapper">
+
+      <div class="content__shape content__shape--4">
+        <svg class="svg__link" preserveAspectRatio="none" viewBox="0 0 160 150" style=""><use xlink:href="#shape--1"></use></svg>
+      </div>
+
+      <div class="content__shape content__shape--5">
+        <svg class="svg__link" preserveAspectRatio="none" viewBox="0 0 160 120" style=""><use xlink:href="#shape--2"></use></svg>
+        <svg class="svg__content" viewBox="0 0 160 120" fill="currentColor" x="0px" y="0px" id="shape--2"><path d="M124.3,80.3c20.5-1.1,32-18.4,34.8-31.5c4.7-22.6-6.7-55.4-81.5-47.7c-124.8,12.7-75.1,145.7-16.9,114
+          C99.9,93.7,86.4,82.3,124.3,80.3z"></path></svg>
+      </div>
+
+      <div class="content__image-circle content__image-circle--2 ">
+      </div>
+
+      <div class="content__container content__container--2">
+        <div class="content__container-layout">
+            <h5 class="my-text--1">EFFECTIVE EDUCATION<br>
+            </h5>
+            <h1 class="my-text--2">The Institute for Effective Education</h1>
+            <p class="my-text--3">Даарен из <a href="#" class="">Амстердама</a>
+            </p>
+            <button class="button button--fancy">Learn More</button>
+        </div>
+      </div>
 
     </div>
   </section>
@@ -239,14 +377,127 @@
 
     </div>
   </section>
-  
 
 
-  <section class="content">
+  <section class="content content--6">
     <div class="sheet content__sheet content__inner-wrapper">
+  
+      <div class="content__shape content__shape--6">
+        <svg class="svg__link" preserveAspectRatio="none" viewBox="0 0 160 160" style=""><use xlink:href="#shape--3"></use></svg>
+        <svg class="svg__content" viewBox="0 0 160 160" fill="currentColor" x="0px" y="0px" id="shape--3"><path d="M157.4,45.5c11.3-39.1-16.3-50.2-43.8-43.8c-25.2,5.8-35.5,17.2-61,16.5C21.7,17.4,0,39.8,0,71.3
+          c0,49.1,58.2,47.8,76.2,68.5c38.8,44.7,92.8,8.2,79.3-40.3C148.1,73.2,155.9,50.6,157.4,45.5z"></path></svg>
+      </div>
+  
+      <div class="content__rectangle">
+        <div class="content__rectangle-layout">
+          <h2 class="my-text my-text--1">
+             An Effective Education
+          </h2>
+          <h5 class="my-text my-text--2">
+            Sample text. Click to select the text box. Click again or double click to start editing the text.
+          </h5>
+        </div>
+      </div>
+
+      <div class="content__row row">
+        <div class="row__layout--1 row__layout--3  row__layout">
+          <p class="my-text my-text--3 "> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="row__layout--2 row__layout--3  row__layout">
+          <p class="my-text my-text--3 "> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </div>
+
+
+      <div class="content__shape content__shape--7">
+          <svg class="svg__link" preserveAspectRatio="none" viewBox="0 0 160 140" style=""><use xlink:href="#shape--4"></use></svg>
+          <svg class="svg__content" viewBox="0 0 160 140" fill="var(--theme-color-2)" x="0px" y="0px" id="shape--4"><g><g><path d="M138.9,102.2c-9.5,10.1-24.4,20.2-41.2,27.4C63.2,144.5,21,147.1,3.1,112.4c-9.9-19.1,6.5-28.8,11.8-45.7
+            c5.3-16.9-11.4-32.3-5.1-49.9c1.8-4.9,4.9-9,8.9-11.9C24,1,30.8-0.8,37.8,0.3C43.6,1.2,49,3.5,54.3,5.7c8.8,3.7,17.4,7.1,26.3,9.8
+            c15.7,4.7,31.3,3.7,47.1,7.2c8.5,1.9,16.7,5.6,22.6,11.8C170.3,55.7,155.8,84.1,138.9,102.2z"></path></g></g></svg>
+      </div>
+  
+  
     </div>
   </section>
 
-    
+
+
+  <section class="content content--7">
+    <div class="sheet content__sheet content__inner-wrapper">
+
+      <div class="content__shape content__shape--8">
+        <svg class="svg__link" preserveAspectRatio="none" viewBox="0 0 160 150" style="color:var(--theme-color-2)"><use xlink:href="#shape--1"></use></svg>
+      </div>
+
+      <div class="content__image-circle content__image-circle--3">
+      </div>
+
+      <div class="content__container content__container--3">
+        <div class="content__container-layout">
+            <h5 class="my-text--1">QUALITY EDUCATION<br>
+            </h5>
+            <h1 class="my-text--2">Education for health and well-being</h1>
+            <p class="my-text--3">Даарен из <a href="#" class="">Амстердама</a>
+            </p>
+            <button class="button button--fancy">Learn More</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="content content--9">
+    <div class="sheet content__sheet content__inner-wrapper">
+        <div class="content__shape content__shape--9">
+          <svg class="svg__link" preserveAspectRatio="none" viewBox="0 0 160 160" style=""><use xlink:href="#shape--5"></use></svg>
+          <svg class="svg__content" viewBox="0 0 160 160" fill="currentColor"  x="0px" y="0px" id="shape--5" style="enable-background:new 0 0 160 160;"><path d="M10.3,39.9c-18.2,24.9-9.2,62.5,4,87.4c8.2,15.4,23,36.1,48.6,32.2c5.8-0.9,11.1-3.2,16.9-4.3c17.8-3.4,37.9,4.7,54.5-1.5
+            c6.6-2.5,11.6-6.9,15.5-11.8c12.2-15.3,13.7-35.6,3.8-51.9c-6.9-11.5-19-20.9-23.6-33.1c-4.5-11.9-1.4-24.9-4.7-37.1
+            C121.1,5,103.7-5.6,85.7,3.1c-6.8,3.3-12.6,7.7-20,10.2C58,15.9,49.5,16.6,41.6,19C26.8,23.6,16.7,31,10.3,39.9z"></path>
+          </svg>
+        </div>
+
+        <div class="content__image-circle content__image-circle--4">
+          <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A4d1288176b561f1054a73e4f9481cd2f91e18c6ae17df157be380038ddb5d3ac&amp;width=790&amp;height=710&amp;lang=ru_RU&amp;scroll=true"></script>
+        </div>
+
+        <div class="content__shape content__shape--10">
+        </div>
+
+        <div class="content__container content__container--4">
+          <div class="content__container-layout">
+              <h5 class="my-text--1">EFFECTIVE EDUCATION<br>
+              </h5>
+              <h1 class="my-text--2">The Institute for Effective Education</h1>
+              <p class="my-text--3">Даарен из <a href="#" class="">Амстердама</a>
+              </p>
+              <button class="button button--fancy">Learn More</button>
+          </div>
+        </div>
+
+    </div>
+  </section>
+
+  
+
+  <section class="content">
+    <div class="sheet content__sheet content__inner-wrapper">
+ 
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="sheet content__sheet content__inner-wrapper">
+ 
+    </div>
+  </section>
+
+
+  <footer class="footer"> </footer>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 </body>
 </html>

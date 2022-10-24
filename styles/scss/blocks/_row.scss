@@ -35,6 +35,21 @@
             padding-right: 30px;
         }
     }
+    &__layout--3 {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+
+        @media(min-width: 768px) {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        @media(min-width: 992px) {
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+    }
     &__button {
         margin: 30px auto 0 0;
     }
