@@ -10,6 +10,13 @@
         border-radius: 50px;
         background-color: var(--theme-color-2);
         color: var(--neutral-bg-color);
+        transition: background-color 0.3s;
+    }
+    &--fancy:hover {
+        background-color: var(--theme-color-2-hover);
+    }
+    &--fancy:active {
+        background-color: var(--theme-color-1);
     }
     &--nobg {
         padding: 0;

@@ -2,7 +2,14 @@
 
     &__link {
       white-space: nowrap;
+      padding: 10px 0;
+      transition: color 0.3s;
+
     /*  border-bottom: 1px solid var(--main-font-color);
       padding-bottom: 2px;*/
+    }
+
+    &__link:hover {
+      color: var(--theme-color-2);
     }
 }

@@ -60,13 +60,14 @@
     &--1 {
         font-weight: 700;
         font-size: 1.5rem;
-        margin: 30px 0px 0;
+        margin: 15px 0px 0;
         line-height: 1.2;
 
         @media(min-width: 576px) {
         }
     }
     &--2 {
+        text-align: center;
         font-weight: 700;
         font-size: 2.25rem;
         margin: 0;
@@ -88,7 +89,7 @@
    //     font-weight: 700;
         font-size: 1.5rem;
         margin: 0;
-     //   line-height: 1.2;
+        line-height: 2rem;
 
         @media(min-width: 576px) {
             font-size: 1.875rem;
@@ -97,7 +98,7 @@
             font-size: 1.5rem;
         }
         @media(min-width: 992px) {
-            font-size: 1.875rem;
+           // font-size: 1.875rem;
         }
     }
     &--2 {
@@ -364,12 +365,11 @@
         @media(min-width: 768px) {
         }
         @media(min-width: 992px) {
+            margin-bottom: 70px;
         }
     }
 
     &--3 {
-           // color: var(--gray-text-color);
-           // color: var(--theme-color-2);
             font-size: 1rem;
             font-style: italic;
             text-align: left;
@@ -378,6 +378,22 @@
             }
             @media(min-width: 768px) {
             }   
+    }
+    &--4 {
+        font-size: 0.8rem;
+       // font-style: italic;
+       // text-align: left;
+       // text-indent: 2rem;
+        padding-top: 0px;
+        @media(min-width: 576px) {
+        }
+        @media(min-width: 768px) {
+        }  
+        @media(min-width: 992px) {
+        }
+    }
+    &--5 {
+        text-align: center;
     }
 }
 
@@ -410,5 +426,15 @@
     &--3 {
         margin: 21px 0px 0 0;
         letter-spacing: 1px;       
+    }
+}
+
+.footer .my-text {
+    &--1 {
+        margin:0;
+        margin-bottom: 20px;
+    }
+    &--2 {
+        
     }
 }

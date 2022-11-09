@@ -4,12 +4,15 @@ html {
     --theme-color-1:#f1900e;
     --theme-color-2: #ab4ec7;
     --theme-color-2-gradient: #c37cd8;
+    --theme-color-2-hover: #9f3cbd;
     --theme-color-3: #fff;
     --main-font-color:  #1B1C21;
     --neutral-bg-color: #fff;
     --gray-text-color: #999999;
     --separate-br-color: #e3e3e3;
     --footer-bg-color: #333333;
+    --light-back-color: rgba(232, 232, 232, 0.9607843137);
+    --varning-all-color: red;
 
     --theme-sheet-width-xs: 340px;
     --theme-sheet-width-sm: 540px;
@@ -19,6 +22,7 @@ html {
 
     font-size: 16px;
     color: var(--main-font-color);
+    scroll-behavior: smooth;
   
   }
   *, *:before, *:after {
@@ -39,6 +43,9 @@ body {
     font-size: 1rem;
     line-height: 1.6;
 }
+body::-webkit-scrollbar {
+    width: 0px;
+}
 
 
 p {
@@ -51,5 +58,15 @@ p {
 a {
     color: inherit;
     text-decoration: none;
+    cursor: pointer;
 }
 
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.body--noscroll {
+    overflow: hidden;
+}

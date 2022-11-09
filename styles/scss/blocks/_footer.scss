@@ -1,6 +1,49 @@
 .footer {
     width: 100%;
     min-height: 140px;
+    font-size: 0.9rem;
     background-color:  var(--footer-bg-color);
     color: var(--neutral-bg-color);
+    color: var(--separate-br-color);
+
+
+    &__under {
+        background: #1f1f1f;
+        color: #a1a1a1;
+        margin: auto;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        font-size: 0.8rem;
+        text-align: center;
+    }
+
+    &__wrap {
+        display: flex;
+        gap: 30px;
+    }
+
+    &__section {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        gap:30px;
+        padding: 50px 50px 50px 50px;
+        @media(min-width: 768px) {
+            flex-direction: row;
+        }
+    }
+
+    &__column {
+        min-width: 25%;
+    }
+
+    &__time {
+        @media(min-width: 768px) {
+            white-space: nowrap;
+        }
+    }
+    &__contacts {
+        white-space: nowrap;
+    }
 }

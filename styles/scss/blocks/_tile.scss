@@ -4,7 +4,7 @@
     flex-direction: column;
 
     &>* {
-        background-position: 50% 50%;
+        background-position: 50% 100%;
         background-repeat: no-repeat;
         background-size: cover;
         padding-left: 10px;
@@ -18,16 +18,18 @@
     }
     &__img--1 {
         min-height: 509px;
-        background-image: url(../../images/content/fff.jpg);
+       // background-image: url(../../images/content/fff.jpg);
+       background-image: url(../../images/content/1.png);
+
 
     }
     &__img--2 {
         min-height: 509px;
-        background-image: url(../../images/content/fdfff.jpg);        
+        background-image: url(../../images/content/2.png);        
     }
     &__img--3 {
         min-height: 509px;
-        background-image: url(../../images/content/gffggggg.jpg);
+        background-image: url(../../images/content/3.png);
     }
 
     @media(min-width: 768px) {
@@ -48,11 +50,13 @@
 
     &__img{
         width:100%;
+        border-radius: 10px;
         min-height: 352px;
         @media(min-width: 576px) {
             min-height: 509px;
         }
         @media(min-width: 768px) {
+            border-radius: 0px;
             width: 33%;
             min-height: 384px;
         }
