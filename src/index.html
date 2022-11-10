@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Резвуша. Мастер-классы по Керамике</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <link
+      id="theme-google-font"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i"
+    />
+    <link
+      id="page-google-font"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i|Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|PT+Sans:400,400i,700,700i|Oswald:200,300,400,500,600,700"
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "Rezvusha",
+        "logo": "images/default-logo.png"
+      }
+    </script>
+  </head>
+  <body>
+    <div class="sidebar__wrapper">
+      <div class="sidebar__overlay"></div>
+      <div class="sidebar">
+        <div class="sidebar__close">
+          <button class="icon-wrapper">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M2.79348 1.25712C2.40295 0.866593 1.76979 0.866592 1.37927 1.25712L1.25712 1.37927C0.866592 1.76979 0.866593 2.40296 1.25712 2.79348L7.46364 9L1.25712 15.2065C0.866593 15.597 0.866592 16.2302 1.25712 16.6207L1.37927 16.7429C1.76979 17.1334 2.40295 17.1334 2.79348 16.7429L9 10.5364L15.2065 16.7429C15.597 17.1334 16.2302 17.1334 16.6207 16.7429L16.7429 16.6207C17.1334 16.2302 17.1334 15.597 16.7429 15.2065L10.5364 9L16.7429 2.79348C17.1334 2.40296 17.1334 1.76979 16.7429 1.37927L16.6207 1.25712C16.2302 0.866592 15.597 0.866593 15.2065 1.25712L9 7.46364L2.79348 1.25712Z"
+                fill="var(--neutral-bg-color)"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div class="sidebar__content">
+          <!---->
+        </div>
+      </div>
+
+      <template id="template-callback">
+        <div class="callback-sidebar">
+          <div class="sidebar__header">Оставить заявку</div>
+          <div class="sidebar__body">
+            <form
+              class="sidebar__form callback-form"
+              action="mail.php"
+              method="POST"
+            >
+              <input
+                class="callback-form__input sidebar__input"
+                type="text"
+                id="phone"
+                name="phone"
+                placeholder="Телефон"
+                value=""
+                required=""
+              />
+              <div class="privacy-text sidebar__confirm-info">
+                <span
+                  >Нажимая отправить, вы даете согласие на
+                  <a href="#" rel="noopener noreferrer" target="_blank"
+                    >обработку персональных данных</a
+                  >
+                  и соглашаетесь с нашей
+                  <a href="#" rel="noopener noreferrer" target="_blank"
+                    >политикой конфиденциальности</a
+                  >
+                </span>
+              </div>
+              <button
+                class="callback-form__submit sidebar__submit button button--fancy"
+                type="submit"
+              >
+                <span>Отправить</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </template>
+
+      <template id="template-feedback">
+        <div class="feedback-sidebar">
+          <div class="sidebar__header">Обратная связь</div>
+          <div class="sidebar__body">
+            <form class="sidebar__form feedback-form" action="" method="">
+              <input
+                class="feedback-form__input sidebar__input"
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Имя"
+                value=""
+              />
+              <input
+                class="feedback-form__input sidebar__input"
+                type="text"
+                id="phone"
+                name="phone"
+                placeholder="Телефон"
+                value=""
+                required=""
+              />
+              <input
+                class="feedback-form__input sidebar__input"
+                type="text"
+                id="email"
+                name="email"
+                placeholder="Электронная почта"
+                value=""
+              />
+              <textarea
+                class="feedback-form__textarea sidebar__textarea"
+                name="message"
+                id="message"
+                cols="30"
+                rows="8"
+              ></textarea>
+              <div class="privacy-text sidebar__confirm-info">
+                <span
+                  >Нажимая отправить, вы даете согласие на
+                  <a href="#" rel="noopener noreferrer" target="_blank"
+                    >обработку персональных данных</a
+                  >
+                  и соглашаетесь с нашей
+                  <a href="#" rel="noopener noreferrer" target="_blank"
+                    >политикой конфиденциальности</a
+                  >
+                </span>
+              </div>
+              <button
+                class="feedback-form__submit sidebar__submit button button--fancy"
+                type="submit"
+              >
+                <span>Отправить</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </template>
+      <template id="template-price">
+        <div class="price-sidebar">
+          <div class="sidebar__header">Наши цены</div>
+          <div class="sidebar__body">
+            <p>
+              Свитюшка — 1 млн руб;<br />
+              Ватрушка — 1000 руб;
+            </p>
+          </div>
+        </div>
+      </template>
+    </div>
+
+    <header class="header">
+      <div class="sheet header__sheet header__inner-wrapper">
+        <div class="header__logo logo">
+          <a href="/"
+            ><img
+              src="images/logo/default-logo.png"
+              alt="РезвушаCeramic"
+              class="logo__img"
+          /></a>
+        </div>
+
+        <div class="header__socials header__socials--1 socials">
+          <a
+            class="socials__url"
+            title="instagram"
+            target="_blank"
+            href="https://instagram.com"
+          >
+            <span class="socials__icon--1">
+              <svg
+                class="socials__svg svg__link"
+                preserveAspectRatio="xMidYMin slice"
+                viewBox="0 0 112 112"
+                style=""
+              >
+                <use xlink:href="#svg-insta"></use>
+              </svg>
+              <svg
+                class="svg__content"
+                viewBox="0 0 112 112"
+                x="0"
+                y="0"
+                id="svg-insta"
+              >
+                <circle fill="currentColor" cx="56.1" cy="56.1" r="55"></circle>
+                <path
+                  fill="#FFFFFF"
+                  d="M55.9,38.2c-9.9,0-17.9,8-17.9,17.9C38,66,46,74,55.9,74c9.9,0,17.9-8,17.9-17.9C73.8,46.2,65.8,38.2,55.9,38.2
+                z M55.9,66.4c-5.7,0-10.3-4.6-10.3-10.3c-0.1-5.7,4.6-10.3,10.3-10.3c5.7,0,10.3,4.6,10.3,10.3C66.2,61.8,61.6,66.4,55.9,66.4z"
+                ></path>
+                <path
+                  fill="#FFFFFF"
+                  d="M74.3,33.5c-2.3,0-4.2,1.9-4.2,4.2s1.9,4.2,4.2,4.2s4.2-1.9,4.2-4.2S76.6,33.5,74.3,33.5z"
+                ></path>
+                <path
+                  fill="#FFFFFF"
+                  d="M73.1,21.3H38.6c-9.7,0-17.5,7.9-17.5,17.5v34.5c0,9.7,7.9,17.6,17.5,17.6h34.5c9.7,0,17.5-7.9,17.5-17.5V38.8
+                C90.6,29.1,82.7,21.3,73.1,21.3z M83,73.3c0,5.5-4.5,9.9-9.9,9.9H38.6c-5.5,0-9.9-4.5-9.9-9.9V38.8c0-5.5,4.5-9.9,9.9-9.9h34.5
+                c5.5,0,9.9,4.5,9.9,9.9V73.3z"
+                ></path>
+              </svg>
+            </span>
+          </a>
+        </div>
+
+        <nav class="header__nav nav my-text--custom animate-opacity">
+          <a href="#master-klass" class="nav__link">Мастер-классы</a>
+          <a href="#schedule" class="nav__link">Расписание</a>
+          <a href="#price" class="nav__link">Цены</a>
+          <a href="#contacts" class="nav__link">Контакты</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="content content--1">
+      <div class="sheet content__sheet content__inner-wrapper">
+        <div class="content__shape content__shape--1 animate-appearance">
+          <svg
+            class="svg__link"
+            preserveAspectRatio="none"
+            viewBox="0 0 160 150"
+            style=""
+          >
+            <use xlink:href="#shape--1"></use>
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            version="1.1"
+            xml:space="preserve"
+            class="svg__content"
+            fill="currentColor"
+            viewBox="0 0 160 150"
+            x="0px"
+            y="0px"
+            id="shape--1"
+          >
+            <path
+              d="M43.2,126.9c14.2,1.3,27.6,7,39.1,15.6c8.3,6.1,19.4,10.3,32.7,5.3c11.7-4.4,18.6-17.4,21-30.2c2.6-13.3,8.1-25.9,15.7-37.1
+            c8.3-12.1,10.8-27.9,5.3-42.7C150.5,20.3,134.6,9,117,7.6C107.9,6.9,98.8,5,90.1,1.9C83-0.6,75-0.7,67.4,2.1
+            c-9.9,3.7-17,11.6-20.1,21c-3.3,10.1-10.9,18-20.6,22.2c-0.1,0-0.1,0.1-0.2,0.1c-20.3,8.9-31,32-24.6,53.2
+            C6.9,115.6,25.2,125.2,43.2,126.9z"
+            ></path>
+          </svg>
+        </div>
+
+        <div
+          class="content__image-circle content__image-circle--1 animate-rotate"
+        >
+          <div class="swiper1 swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <div
+                class="content__slide content__slide--1 content__slide--1a swiper-slide"
+              ></div>
+              <div
+                class="content__slide content__slide--1 content__slide--1b swiper-slide"
+              ></div>
+              <div
+                class="content__slide content__slide--1 content__slide--1c swiper-slide"
+              ></div>
+              <div
+                class="content__slide content__slide--1 content__slide--1d swiper-slide"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content__shape content__shape--2 animate-fromright"></div>
+
+        <div class="content__container content__container--1 animate-fromleft">
+          <div class="content__container-layout">
+            <h5 class="my-text--1">Мастерская в Москве<br /></h5>
+            <h1 class="my-text--2">
+              Мастер-класс по Керамике за гончарным кругом
+            </h1>
+            <p class="my-text--3">
+              Изделие из глины <a href="#" class="">своими руками</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content content--2" id="master-klass">
+      <div class="sheet content__sheet content__inner-wrapper">
+        <div class="content__palettes">
+          <div class="content__palette palette">
+            <div class="palette__layout">
+              <span class="palette__icon icon">
+                <img
+                  src="images/content/handing-center.png"
+                  alt=""
+                  class="animation-center"
+                />
+                <img
+                  src="images/content/handing-left.png"
+                  alt=""
+                  class="animation-left"
+                />
+                <img
+                  src="images/content/handing-right.png"
+                  alt=""
+                  class="animation-right"
+                />
+              </span>
+              <h5 class="palette__subtitle my-text--1 my-text--custom">
+                Ручная лепка
+              </h5>
+              <p class="palette__text">
+                Полепить за столом и сделать керамчушку. Обалденные парные
+                тарелочки или что вам в голову придёт.
+              </p>
+            </div>
+          </div>
+
+          <div class="content__palette palette">
+            <div class="palette__layout">
+              <span class="palette__icon icon">
+                <img src="images/content/wheel-center.png" alt="" />
+                <img
+                  src="images/content/wheel-top.png"
+                  alt=""
+                  class="animation-1"
+                />
+                <img
+                  src="images/content/wheel-middle.png"
+                  alt=""
+                  class="animation-2"
+                />
+                <img
+                  src="images/content/wheel-bottom.png"
+                  alt=""
+                  class="animation-3"
+                />
+              </span>
+              <h5 class="palette__subtitle my-text--1 my-text--custom">
+                ​​Гончарный круг
+              </h5>
+              <p class="palette__text">
+                Крутим-вертим приколюху. Может получиться небольшой кувшинчик,
+                стаканчик, ещё что. И потом красиво раскрасим.
+              </p>
+            </div>
+          </div>
+
+          <div class="content__palette palette">
+            <div class="palette__layout">
+              <span class="palette__icon icon">
+                <img
+                  src="images/content/gift-center.png"
+                  alt=""
+                  class="animation-gift--center"
+                />
+                <img
+                  src="images/content/gift-left.png"
+                  alt=""
+                  class="animation-gift--left"
+                />
+                <img
+                  src="images/content/gift-right.png"
+                  alt=""
+                  class="animation-gift--right"
+                />
+              </span>
+              <h5 class="palette__subtitle my-text--1 my-text--custom">
+                ​Подарочные сертификаты
+              </h5>
+              <p class="palette__text">
+                Если вы хотите сделать подарок кому-нибудь на День рождение или
+                как знак внимания
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="content__row--1 row">
+          <div class="row__layout--1 row__layout">
+            <h2 class="row__subtitle my-text--custom my-text--2">
+              Заголовок о чём-то, <br />алеалё, к действию
+            </h2>
+          </div>
+          <div class="row__layout--2 row__layout">
+            <p class="my-text my-text--3">
+              Мы занимаемся лепкой из глины в разных техниках, в том числе и
+              гончарным ремеслом. Валерия Резвушкина — наш бессменный лидер и
+              мы, под её руководством, смело шагаем навстречу керамическому
+              коммунизму. Участники узнают об истории гончарного дела, о его
+              этапах, увидят, как лепят из глины, а потом смогут сами вылепить
+              глиняные изделия
+            </p>
+            <button
+              class="button button--fancy row__button modal-enter"
+              data-modal="template-callback"
+            >
+              Записаться
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content content--3">
+      <div class="sheet content__sheet content__inner-wrapper">
+        <div class="content__shape content__shape--3">
+          <svg
+            class="svg__link"
+            preserveAspectRatio="none"
+            viewBox="0 0 160 150"
+            style=""
+          >
+            <use xlink:href="#shape--1"></use>
+          </svg>
+        </div>
+
+        <div class="content__tile content__tile--1 tile">
+          <div class="tile__img tile__img--1"></div>
+
+          <div class="tile__text tile__text--1">
+            <h3 class="my-text--1">В одиночку или компанией</h3>
+            <p class="my-text--2">
+              Текст, вкратце говорящий, что там за херобора происходит.
+              Пояснение. Описание.
+            </p>
+            <button
+              class="button button--nobg content--3__button modal-enter"
+              data-modal="template-callback"
+            >
+              Хотим Также
+            </button>
+            <p class="my-text--3">Ещё что-то Умное</p>
+          </div>
+          <div class="tile__img tile__img--2"></div>
+
+          <div class="tile__text tile__text--2">
+            <h3 class="my-text--1">Для детей и взрослых</h3>
+            <p class="my-text--2">
+              Описание. Текст, вкратце говорящий, что там за херобора
+              происходит. Пояснение.
+            </p>
+            <button
+              class="button button--nobg content--3__button modal-enter"
+              data-modal="template-callback"
+            >
+              Хотим Также
+            </button>
+            <p class="my-text--3">Ещё что-то Умное</p>
+          </div>
+
+          <div class="tile__img tile__img--3"></div>
+
+          <div class="tile__text tile__text--3">
+            <h3 class="my-text--1">Романтик свидания</h3>
+            <p class="my-text--2">
+              Описание. Текст, вкратце говорящий, что там за херобора
+              происходит. Пояснение.
+            </p>
+            <button
+              class="button button--nobg content--3__button modal-enter"
+              data-modal="template-callback"
+            >
+              Хотим Также
+            </button>
+            <p class="my-text--3">Ещё что-то Умное</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content content--8" id="schedule">
+      <div class="sheet content__sheet content__inner-wrapper">
+        <h2 class="my-text--1">Наше расписание</h2>
+        <h5 class="my-text--2">Мастер-классов, Мероприятий и Занятий</h5>
+
+        <div class="schedule__wrapper">
+          <div class="schedule__under">
+            <div class="schedule__under--up">
+              <div class="schedule__control">
+                <button class="schedule__control-btn schedule__left">
+                  <svg
+                    width="14"
+                    height="20"
+                    viewBox="0 0 8 12"
+                    fill="var(--theme-color-2)"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M4.5 6L0.707106 2.20711C0.316582 1.81658 0.316582 1.18342 0.707107 0.792893L0.792893 0.707107C1.18342 0.316583 1.81658 0.316583 2.20711 0.707107L6.79289 5.29289C7.18342 5.68342 7.18342 6.31658 6.79289 6.70711L2.20711 11.2929C1.81658 11.6834 1.18342 11.6834 0.792893 11.2929L0.707107 11.2071C0.316583 10.8166 0.316583 10.1834 0.707107 9.79289L4.5 6Z"
+                      fill
+                    ></path>
+                  </svg>
+                </button>
+                <div class="schedule__week">НАВИГАЦИЯ</div>
+                <button class="schedule__control-btn schedule__right">
+                  <svg
+                    width="14"
+                    height="20"
+                    viewBox="0 0 8 12"
+                    fill="var(--theme-color-2)"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M4.5 6L0.707106 2.20711C0.316582 1.81658 0.316582 1.18342 0.707107 0.792893L0.792893 0.707107C1.18342 0.316583 1.81658 0.316583 2.20711 0.707107L6.79289 5.29289C7.18342 5.68342 7.18342 6.31658 6.79289 6.70711L2.20711 11.2929C1.81658 11.6834 1.18342 11.6834 0.792893 11.2929L0.707107 11.2071C0.316583 10.8166 0.316583 10.1834 0.707107 9.79289L4.5 6Z"
+                      fill
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+
+              <div class="schedule__infodots">
+                <div class="schedule__infodot-wrapper">
+                  <div class="schedule__infodot"></div>
+                  Свободно
+                </div>
+                <div class="schedule__infodot-wrapper">
+                  <div
+                    class="schedule__infodot schedule__infodot--orderedfull"
+                  ></div>
+                  Занято
+                </div>
+                <div class="schedule__infodot-wrapper">
+                  <div
+                    class="schedule__infodot schedule__infodot--orderedmed"
+                  ></div>
+                  Уточняйте
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="schedule">
+            <div class="schedule__header">
+              <div class="schedule__header-row"></div>
+            </div>
+            <div class="schedule__body"></div>
+          </div>
+
+          <div class="schedule__text" id="price">
+            <p class="my-text--3">
+              Какой-то текст, который нормально там объясняет по поводу того,
+              как записаться. На какое время возможно, что мы подстроимся под
+              вас итд. Мол вы пишите и будете красавчиками, там всё порешаем.
+            </p>
+            <h3 class="my-text--5">Cамая выгодная цена в Москве</h3>
+            <p class="my-text--4">
+              Текст про цену 1 часа 1300 руб за 1 человека.<br />
+              1 час — 1300 руб;<br />
+              2 часа — 1 млрд руб;<br />
+
+              Цена на мастер-класс может варьироваться в зависимости от
+              мероприятия (нужна ли вам пустая мастерская или нет).
+            </p>
+            <button
+              class="button button--nobg content--3__button modal-info-enter"
+              data-modal="template-price"
+            >
+              Прайс-лист
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content content--5">
+      <div class="sheet content__sheet content__inner-wrapper">
+        <div class="content__shape content__shape--4">
+          <svg
+            class="svg__link"
+            preserveAspectRatio="none"
+            viewBox="0 0 160 150"
+          >
+            <use xlink:href="#shape--1"></use>
+          </svg>
+        </div>
+
+        <div class="content__shape content__shape--5">
+          <svg
+            class="svg__link"
+            preserveAspectRatio="none"
+            viewBox="0 0 160 120"
+          >
+            <use xlink:href="#shape--2"></use>
+          </svg>
+          <svg
+            class="svg__content"
+            viewBox="0 0 160 120"
+            fill="currentColor"
+            x="0px"
+            y="0px"
+            id="shape--2"
+          >
+            <path
+              d="M124.3,80.3c20.5-1.1,32-18.4,34.8-31.5c4.7-22.6-6.7-55.4-81.5-47.7c-124.8,12.7-75.1,145.7-16.9,114
+          C99.9,93.7,86.4,82.3,124.3,80.3z"
+            ></path>
+          </svg>
+        </div>
+
+        <!--      <div class="content__image-circle content__image-circle--2"></div> -->
+
+        <div class="content__image-circle content__image-circle--2">
+          <div class="swiper2 swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <div
+                class="content__slide content__slide--2 content__slide--2a swiper-slide"
+              ></div>
+              <div
+                class="content__slide content__slide--2 content__slide--2b swiper-slide"
+              ></div>
+            </div>
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+
+        <div class="content__container content__container--2">
+          <div class="content__container-layout">
+            <h5 class="my-text--1">РАБОТЫ КЛИЕНТОВ<br /></h5>
+            <h1 class="my-text--2">Что мы сделали на первом Мастер-Классе</h1>
+            <p class="my-text--3">
+              Мои сладкие <a href="#" class="">Пупусечки</a>
+            </p>
+            <button
+              class="button button--fancy modal-enter"
+              data-modal="template-callback"
+            >
+              Хочу Также
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content content--4">
+      <div class="sheet content__sheet content__inner-wrapper">
+        <h2 class="my-text--1">Как Всё Происходит?</h2>
+        <h5 class="my-text--2">3 Шага до Готового Изделия</h5>
+        <div class="my-text--line"></div>
+
+        <div class="content__palettes">
+          <div class="content__palette content__palette--2 palette">
+            <div class="palette__layout">
+              <div class="my-text__wrapper">
+                <h3 class="my-text my-text--custom-2 my-text--3">1</h3>
+                <h4 class="my-text my-text--4">Налепили Намешали</h4>
+              </div>
+              <p class="my-text my-text--5">
+                Под руководством педагога. Всё будет чинно-благородно. Не надо
+                бояться, надо радоваться.
+              </p>
+            </div>
+          </div>
+
+          <div class="content__palette content__palette--2 palette">
+            <div class="palette__layout">
+              <div class="my-text__wrapper">
+                <h3 class="my-text my-text--custom-2 my-text--3">2</h3>
+                <h4 class="my-text my-text--4">Высохло и Обожгли</h4>
+              </div>
+              <p class="my-text my-text--5">
+                Изготовление керамняшек процесс не быстрый. Пока полежит
+                высохнет, потом несколько дней на обжиг.
+              </p>
+            </div>
+          </div>
+
+          <div class="content__palette content__palette--2 palette">
+            <div class="palette__layout">
+              <div class="my-text__wrapper">
+                <h3 class="my-text my-text--custom-2 my-text--3">3</h3>
+                <h4 class="my-text my-text--4">Пришли и Забрали</h4>
+              </div>
+              <p class="my-text my-text--5">
+                Или же мы можем вам объяснить, что за 150 руб отправим в пункт
+                выдачи в любую точку Москвы.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content content--6">
+      <div class="sheet content__sheet content__inner-wrapper">
+        <div class="content__shape content__shape--6">
+          <svg
+            class="svg__link"
+            preserveAspectRatio="none"
+            viewBox="0 0 160 160"
+            style=""
+          >
+            <use xlink:href="#shape--3"></use>
+          </svg>
+          <svg
+            class="svg__content"
+            viewBox="0 0 160 160"
+            fill="currentColor"
+            x="0px"
+            y="0px"
+            id="shape--3"
+          >
+            <path
+              d="M157.4,45.5c11.3-39.1-16.3-50.2-43.8-43.8c-25.2,5.8-35.5,17.2-61,16.5C21.7,17.4,0,39.8,0,71.3
+          c0,49.1,58.2,47.8,76.2,68.5c38.8,44.7,92.8,8.2,79.3-40.3C148.1,73.2,155.9,50.6,157.4,45.5z"
+            ></path>
+          </svg>
+        </div>
+
+        <div class="content__rectangle">
+          <div class="content__rectangle-layout">
+            <h2 class="my-text my-text--1">Заголовок головок</h2>
+            <h5 class="my-text my-text--2">
+              Простой текст. Точнее подзаголовок что-то уточняющий. Чтобы
+              подходило поисковым системам.
+            </h5>
+          </div>
+        </div>
+
+        <div class="content__row row">
+          <div class="row__layout--1 row__layout--3 row__layout">
+            <p class="my-text my-text--3">
+              Мы занимаемся лепкой из глины в разных техниках, в том числе и
+              гончарным ремеслом. Валерия Резвушкина — наш бессменный лидер и
+              мы, под её руководством, смело шагаем навстречу керамическому
+              коммунизму. Участники узнают об истории гончарного дела, о его
+              этапах, увидят, как лепят из глины, а потом смогут сами вылепить
+              глиняные изделия
+            </p>
+          </div>
+          <div class="row__layout--2 row__layout--3 row__layout">
+            <p class="my-text my-text--3">
+              Мы занимаемся лепкой из глины в разных техниках, в том числе и
+              гончарным ремеслом. Валерия Резвушкина — наш бессменный лидер и
+              мы, под её руководством, смело шагаем навстречу керамическому
+              коммунизму. Участники узнают об истории гончарного дела, о его
+              этапах, увидят, как лепят из глины, а потом смогут сами вылепить
+              глиняные изделия
+            </p>
+          </div>
+        </div>
+
+        <div class="content__shape content__shape--7">
+          <svg
+            class="svg__link"
+            preserveAspectRatio="none"
+            viewBox="0 0 160 140"
+            style=""
+          >
+            <use xlink:href="#shape--4"></use>
+          </svg>
+          <svg
+            class="svg__content"
+            viewBox="0 0 160 140"
+            fill="var(--theme-color-2)"
+            x="0px"
+            y="0px"
+            id="shape--4"
+          >
+            <g>
+              <g>
+                <path
+                  d="M138.9,102.2c-9.5,10.1-24.4,20.2-41.2,27.4C63.2,144.5,21,147.1,3.1,112.4c-9.9-19.1,6.5-28.8,11.8-45.7
+            c5.3-16.9-11.4-32.3-5.1-49.9c1.8-4.9,4.9-9,8.9-11.9C24,1,30.8-0.8,37.8,0.3C43.6,1.2,49,3.5,54.3,5.7c8.8,3.7,17.4,7.1,26.3,9.8
+            c15.7,4.7,31.3,3.7,47.1,7.2c8.5,1.9,16.7,5.6,22.6,11.8C170.3,55.7,155.8,84.1,138.9,102.2z"
+                ></path>
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="content content--7">
+      <div class="sheet content__sheet content__inner-wrapper">
+        <div class="content__shape content__shape--8">
+          <svg
+            class="svg__link"
+            preserveAspectRatio="none"
+            viewBox="0 0 160 150"
+            style="color: var(--theme-color-2)"
+          >
+            <use xlink:href="#shape--1"></use>
+          </svg>
+        </div>
+
+        <div class="content__image-circle content__image-circle--3"></div>
+
+        <div class="content__container content__container--3">
+          <div class="content__container-layout">
+            <h5 class="my-text--1">ГЛАВНЫЙ МАСТЕР<br /></h5>
+            <h1 class="my-text--2">Валерия Резвушкина</h1>
+            <p class="my-text--3">
+              Художница-керамистка <br />Выпускница
+              <a href="#" class="">МГХПА им. С.Г. Строганова</a> <br />- более 5
+              лет опыт преподавания; <br />- умение общаться с детьми; <br />-
+              искренне любит своё дело и научит вас тому же;
+            </p>
+            <button
+              class="button button--fancy modal-enter"
+              data-modal="template-callback"
+            >
+              Связаться
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content content--9" id="contacts">
+      <div class="sheet content__sheet content__inner-wrapper">
+        <div class="content__shape content__shape--9">
+          <svg
+            class="svg__link"
+            preserveAspectRatio="none"
+            viewBox="0 0 160 160"
+            style=""
+          >
+            <use xlink:href="#shape--5"></use>
+          </svg>
+          <svg
+            class="svg__content"
+            viewBox="0 0 160 160"
+            fill="currentColor"
+            x="0px"
+            y="0px"
+            id="shape--5"
+            style="enable-background: new 0 0 160 160"
+          >
+            <path
+              d="M10.3,39.9c-18.2,24.9-9.2,62.5,4,87.4c8.2,15.4,23,36.1,48.6,32.2c5.8-0.9,11.1-3.2,16.9-4.3c17.8-3.4,37.9,4.7,54.5-1.5
+            c6.6-2.5,11.6-6.9,15.5-11.8c12.2-15.3,13.7-35.6,3.8-51.9c-6.9-11.5-19-20.9-23.6-33.1c-4.5-11.9-1.4-24.9-4.7-37.1
+            C121.1,5,103.7-5.6,85.7,3.1c-6.8,3.3-12.6,7.7-20,10.2C58,15.9,49.5,16.6,41.6,19C26.8,23.6,16.7,31,10.3,39.9z"
+            ></path>
+          </svg>
+        </div>
+
+        <div class="content__image-circle content__image-circle--4">
+          <script
+            type="text/javascript"
+            charset="utf-8"
+            async
+            src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A4d1288176b561f1054a73e4f9481cd2f91e18c6ae17df157be380038ddb5d3ac&amp;width=790&amp;height=710&amp;lang=ru_RU&amp;scroll=true"
+          ></script>
+        </div>
+
+        <div class="content__shape content__shape--10"></div>
+
+        <div class="content__container content__container--4">
+          <div class="content__container-layout">
+            <h5 class="my-text--1">Как к нам попасть?<br /></h5>
+            <h1 class="my-text--2">Москва, ул. Пермская, 1с7-8</h1>
+            <p class="my-text--3">
+              Наш телефон: <b class="my-text--custom">+7 916 845 5562</b>
+              <br />Точную информацию по проходу в студию<br />
+              уточняйте у менеджера
+            </p>
+            <button
+              class="button button--fancy modal-enter"
+              data-modal="template-feedback"
+            >
+              Связь с нами
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="sheet content__sheet content__inner-wrapper">
+        <div class="content__fill"></div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__section">
+        <div class="footer__column">
+          <h4 class="my-text--1">Адрес</h4>
+          <p class="my-text--2">
+            Москва, Пермская ул, 1с7-8.<br />
+            Пошаговую инструкцию прохода спрашивайте по телефону.
+          </p>
+        </div>
+        <div class="footer__wrap">
+          <div class="footer__column">
+            <h4 class="my-text--1">Часы работы</h4>
+            <p class="my-text--2 footer__time">
+              пн-пт 10:00 - 00:00<br />
+              сб-вс 10:00 - 00:00
+            </p>
+          </div>
+          <div class="footer__column">
+            <h4 class="my-text--1">Контакты</h4>
+            <p class="my-text--2 footer__contacts">
+              info@rezvusha.ru<br />
+              +7 916 845 5562<br />
+            </p>
+
+            <div class="socials">
+              <a
+                class="socials__url"
+                title="instagram"
+                target="_blank"
+                href="https://instagram.com"
+              >
+                <span class="socials__icon--1">
+                  <svg
+                    class="socials__svg svg__link"
+                    preserveAspectRatio="xMidYMin slice"
+                    viewBox="0 0 112 112"
+                    style=""
+                  >
+                    <use xlink:href="#svg-insta"></use>
+                  </svg>
+                  <svg
+                    class="svg__content"
+                    viewBox="0 0 112 112"
+                    x="0"
+                    y="0"
+                    id="svg-insta"
+                  >
+                    <circle
+                      fill="currentColor"
+                      cx="56.1"
+                      cy="56.1"
+                      r="55"
+                    ></circle>
+                    <path
+                      fill="#FFFFFF"
+                      d="M55.9,38.2c-9.9,0-17.9,8-17.9,17.9C38,66,46,74,55.9,74c9.9,0,17.9-8,17.9-17.9C73.8,46.2,65.8,38.2,55.9,38.2
+                    z M55.9,66.4c-5.7,0-10.3-4.6-10.3-10.3c-0.1-5.7,4.6-10.3,10.3-10.3c5.7,0,10.3,4.6,10.3,10.3C66.2,61.8,61.6,66.4,55.9,66.4z"
+                    ></path>
+                    <path
+                      fill="#FFFFFF"
+                      d="M74.3,33.5c-2.3,0-4.2,1.9-4.2,4.2s1.9,4.2,4.2,4.2s4.2-1.9,4.2-4.2S76.6,33.5,74.3,33.5z"
+                    ></path>
+                    <path
+                      fill="#FFFFFF"
+                      d="M73.1,21.3H38.6c-9.7,0-17.5,7.9-17.5,17.5v34.5c0,9.7,7.9,17.6,17.5,17.6h34.5c9.7,0,17.5-7.9,17.5-17.5V38.8
+                    C90.6,29.1,82.7,21.3,73.1,21.3z M83,73.3c0,5.5-4.5,9.9-9.9,9.9H38.6c-5.5,0-9.9-4.5-9.9-9.9V38.8c0-5.5,4.5-9.9,9.9-9.9h34.5
+                    c5.5,0,9.9,4.5,9.9,9.9V73.3z"
+                    ></path>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__under">
+        © 2017 - 2022 Резвуша Ceramic. Все права защищены
+      </div>
+    </footer>
+  </body>
+</html>

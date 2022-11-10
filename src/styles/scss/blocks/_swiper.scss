@@ -1,0 +1,9 @@
+html .swiper-button-next,
+html .swiper-button-prev {
+  color: #ffffff75;
+}
+
+html .swiper-button-next:hover,
+html .swiper-button-prev:hover {
+  color: var(--theme-color-2);
+}
